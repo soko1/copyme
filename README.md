@@ -20,7 +20,7 @@ $ ./copyme.sh
 ## Updating
 
 ```
-$ cd copyin && git pull
+$ cd copyme && git pull
 ```
 
 # Contacts
