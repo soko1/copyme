@@ -1,6 +1,6 @@
 # Copyme
 
-Tool for backup with using tar/gnupg/megatools (https://mega.nz). 
+**Copyme** - Tool for backup with using tar/gnupg/megatools (https://mega.nz). 
 
 ## Installing requirements
 
@@ -23,11 +23,11 @@ $ ./copyme.sh
 $ cd copyin && git pull
 ```
 
-## Contacts
+# Contacts
 
 email: nullbsd at gmail dot com
 
 
-## Donate
+# Donate
 
 bitcoin: `1PEj2ArhenkvoaAdq1FvjNF8qF8d6ByxRF`
