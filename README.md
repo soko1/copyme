@@ -13,6 +13,7 @@ $ sudo apt-get install megatools gnupg
 ```
 $ git clone https://github.com/soko1/copyme 
 $ wget https://raw.githubusercontent.com/soko1/copyme/master/copyme.cfg.sample -O copyme.cfg
+$ chmod 600 copyme.cfg
 $ vim copyme.cfg
 $ ./copyme.sh
 ```
