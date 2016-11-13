@@ -1,6 +1,6 @@
 # Copyme
 
-Copyme - tool for backup. 
+Tool for backup with using tar/gnupg/megatools (https://mega.nz). 
 
 ## Installing requirements
 
@@ -11,10 +11,16 @@ $ sudo apt-get install megatools gnupg
 ## Installing and running
 
 ```
-$ git clone 
-$ wget https://raw.githubusercontent.com/soko1/copyme/master/copyme.cfg.sample && mv copyme.cfg.sample copyme.cfg
+$ git clone https://github.com/soko1/copyme 
+$ wget https://raw.githubusercontent.com/soko1/copyme/master/copyme.cfg.sample -O copyme.cfg
 $ vim copyme.cfg
 $ ./copyme.sh
+```
+
+## Updating
+
+```
+$ cd copyin && git pull
 ```
 
 ## Contacts
