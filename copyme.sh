@@ -29,9 +29,9 @@ if [ ! -d $BACKUP_DEST ]; then
 fi
 
 # check and remove old archive
-if [ -f $BACKUP_DEST/$ARCHIVE.tgz.gpg ]; then
-        rm -f $BACKUP_DEST/$ARCHIVE.tgz.gpg
-fi
+#if [ -f $BACKUP_DEST/$ARCHIVE.tgz.gpg ]; then
+#        rm -f $BACKUP_DEST/$ARCHIVE.tgz.gpg
+#fi
 
 # pre backup commands
 $PRE_BACKUP_COMMANDS
