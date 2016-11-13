@@ -1,0 +1,8 @@
+BACKUP_SOURCE="/ /home"
+BACKUP_DEST="/home/BACKUP"
+ARCHIVE="backup_system_`date +%d_%m_%Y`"
+# password for `gpg -c`
+GPG_PASSWD="_PASSWD_FOR_GPG_"
+# access for mega.nz
+MEGAUSER="_EMAIL_"
+MEGAPASSWD="_PASSWD_FOR_MEGA_"
