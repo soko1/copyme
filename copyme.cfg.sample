@@ -1,6 +1,6 @@
 BACKUP_SOURCE="/ /home"
 BACKUP_DEST="/home/BACKUP"
-ARCHIVE="backup_system_`date +%d_%m_%Y`"
+ARCHIVE="backup_`hostname`_`date +%d_%m_%Y`"
 
 # args for /bin/tar 
 TARARGS="--one-file-system --exclude=$BACKUP_DEST --exclude=/swapfile"
