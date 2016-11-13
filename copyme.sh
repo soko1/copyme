@@ -33,14 +33,20 @@ if [ -f $BACKUP_DEST/$ARCHIVE.tgz.gpg ]; then
         rm -f $BACKUP_DEST/$ARCHIVE.tgz.gpg
 fi
 
+# pre backup commands
+$PRE_BACKUP_COMMANDS
+
 # backup
-tar -cvpzf $BACKUP_DEST/$ARCHIVE.tgz --exclude=$BACKUP_DEST --exclude=/swapfile --one-file-system $BACKUP_SOURCE
+tar -cvpzf $BACKUP_DEST/$ARCHIVE.tgz $TARARGS $BACKUP_SOURCE
 
 # encrypting
 gpg -c --passphrase $GPG_PASSWD $BACKUP_DEST/$ARCHIVE.tgz
 
 # remove tar-achive 
 rm -f $BACKUP_DEST/$ARCHIVE.tgz
+
+# after backup commands
+$AFTER_BACKUP_COMMANDS
 
 # upload ecnrypt tar-archive to mega.nz
 megaput -u $MEGAUSER -p $MEGAPASSWD $BACKUP_DEST/$ARCHIVE.tgz.gpg

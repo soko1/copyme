@@ -1,8 +1,21 @@
 BACKUP_SOURCE="/ /home"
 BACKUP_DEST="/home/BACKUP"
 ARCHIVE="backup_system_`date +%d_%m_%Y`"
+
+# args for /bin/tar 
+TARARGS="--one-file-system --exclude=$BACKUP_DEST --exclude=/swapfile"
+
+## for example: 
+# PRE_BACKUP_COMMANDS="systemctl stop mysql && systemctl stop apache2"
+PRE_BACKUP_COMMANDS="" 
+
+## for example: 
+# AFTER_BACKUP_COMMANDS="systemctl start mysql && systemctl start apache2"
+AFTER_BACKUP_COMMANDS="" 
+
 # password for `gpg -c`
 GPG_PASSWD="_PASSWD_FOR_GPG_"
+
 # access for mega.nz
 MEGAUSER="_EMAIL_"
 MEGAPASSWD="_PASSWD_FOR_MEGA_"
