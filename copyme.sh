@@ -4,6 +4,17 @@
 # email: nullbsd at gmail dot com
 # donate: 1PEj2ArhenkvoaAdq1FvjNF8qF8d6ByxRF (bitcoin)
 
+needpackage() {
+    echo
+    echo "I need $1."
+    echo
+    echo "Please, run:"
+    echo "$ sudo apt-get install $1"
+    echo
+    echo "and try again."
+    echo
+    exit
+}
 
 # check configuration file
 if [ -f copyme.cfg ]; then
@@ -23,28 +34,12 @@ fi
 
 # check whether megatools package is installed
 if ! type "megaput" > /dev/null; then
-  echo
-  echo "I need megatools."
-  echo
-  echo "Please, run:"
-  echo "$ sudo apt-get install megatools gnupg"
-  echo
-  echo "and try again."
-  echo
-  exit
+    needpackage "megatools"
+fi
+if ! type "gpg" > /dev/null; then
+    ineedpackage "gnupg"
 fi
 
-if ! type "gpg" > /dev/null; then
-  echo
-  echo "I need gnupg."
-  echo
-  echo "Please, run:"
-  echo "$ sudo apt-get install megatools gnupg"
-  echo
-  echo "and try again."
-  echo
-  exit
-fi
 
 # check needing dirs
 if [ ! -d $BACKUP_DEST ]; then
