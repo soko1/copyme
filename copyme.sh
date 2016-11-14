@@ -9,7 +9,7 @@
 if [ -f copyme.cfg ]; then
 . ./copyme.cfg
 else
-  echo 
+  echo
   echo "I need \"copyme.cfg\"."
   echo
   echo "Please, run:"
@@ -17,6 +17,31 @@ else
   echo "$ mv copyme.cfg.sample copyme.cfg"
   echo
   echo "and edit file \"copyme.cfg\"".
+  echo
+  exit
+fi
+
+# check whether megatools package is installed
+if ! type "megaput" > /dev/null; then
+  echo
+  echo "I need megatools."
+  echo
+  echo "Please, run:"
+  echo "$ sudo apt-get install megatools gnupg"
+  echo
+  echo "and try again."
+  echo
+  exit
+fi
+
+if ! type "gpg" > /dev/null; then
+  echo
+  echo "I need gnupg."
+  echo
+  echo "Please, run:"
+  echo "$ sudo apt-get install megatools gnupg"
+  echo
+  echo "and try again."
   echo
   exit
 fi
