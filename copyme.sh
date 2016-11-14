@@ -4,6 +4,8 @@
 # email: nullbsd at gmail dot com
 # donate: 1PEj2ArhenkvoaAdq1FvjNF8qF8d6ByxRF (bitcoin)
 
+CONF=copyme.cfg
+
 needpackage() {
     echo
     echo "I need $1."
@@ -17,8 +19,8 @@ needpackage() {
 }
 
 # check configuration file
-if [ -f copyme.cfg ]; then
-. ./copyme.cfg
+if [ -f $CONF ]; then
+. ./$CONF
 else
   echo
   echo "I need \"copyme.cfg\"."
@@ -32,6 +34,15 @@ else
   exit
 fi
 
+# check permission
+if [ `stat -c %a "$CONF"` -ne 600 ]; then
+	echo
+	echo "I need secure permission for file \"$CONF\"."
+	echo "Please, run:\n"
+	echo "$ chmod 600 $CONF\n"
+	exit
+fi
+
 # check whether megatools package is installed
 if ! type "megaput" > /dev/null; then
     needpackage "megatools"
@@ -43,6 +54,7 @@ fi
 
 # check needing dirs
 if [ ! -d $BACKUP_DEST ]; then
+    echo
     echo "$BACKUP_DEST not found!\n"
     echo "Please, run:\n$ mkdir $BACKUP_DEST"
     exit;
