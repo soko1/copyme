@@ -74,6 +74,10 @@ tar -cvpzf $BACKUP_DEST/$ARCHIVE.tgz $TARARGS $BACKUP_SOURCE
 # encrypting
 gpg -c --passphrase $GPG_PASSWD $BACKUP_DEST/$ARCHIVE.tgz
 
+# fix permissions
+chmod 600 $BACKUP_DEST/$ARCHIVE.tgz.gpg
+
+
 # remove tar-achive 
 rm -f $BACKUP_DEST/$ARCHIVE.tgz
 
